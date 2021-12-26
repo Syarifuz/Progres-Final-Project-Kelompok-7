@@ -45,38 +45,58 @@ Di bawah menu di atas, pengguna dapat memilih menu yang diinginkan:
 55. Reset Pilihan
 00. Keluar
 ```
+
+___
+
+#### 🔰 DATA YANG DIGUNAKAN
+Data yang digunakan pada program kami adalah sebagai berikut:
+```bash
+> Nama Minuman
+> Harga Minuman
+> Kode Minuman
+```
+
 ___
 
 #### 🔰 METODE YANG DITERAPKAN
-
+Metode-metode yang digunakan dalam program mesin minuman kelompok 7:
+```bash
+> Metode Operasi File.
+> Metode Pointer.
+> Metode Struct. Kami memakai beberapa struct seperti struct menu, subtotal dan struct minuman.
+> Metode Bubble Sorting (ascending dan descending). Kami gunakan untuk mengurutkan menu minuman bedasarkan harga tertinggi hingga yang terendah.
+> Metode Sequential Searching. Kami gunakan untuk mempermudah pengguna dalam mencari menu minuman yang diinginkan.
+> Metode If-Else.
+> Menggunakan Function Void.
+```
 
 ___
 
 #### 🔰 LIST MENU
 ```bash
 > 66. Lihat Menu Berdasarkan Harga 
-Menu berdasarkan harga tertinggi dan terendah
+Menu berdasarkan harga tertinggi dan terendah.
 
 > 77. Cari Menu Minuman
-Mencari menu minuman menggunakan huruf KAPITAL
+Mencari menu minuman menggunakan huruf KAPITAL.
 
 > 99. Struk Pembayaran
 Mencetak hasil pemesanan dengan memasukkan jumlah uang terlebih dahulu setelah itu mencetak struk dan kembalian jika ada. 
 
 > 55. Reset Pilihan 
-Untuk mensetting ke awal sistem 
+Untuk mensetting ke awal sistem.
 
 > 00. Keluar
-Keluar dari sistem mesin minuman
+Keluar dari sistem mesin minuman.
 ```
 
 ___
 
 #### 🔰 CARA PENGGUNAAN APLIKASI
 ```bash
-> Melihat list daftar menu
-> Pesan minuman dengan pilih menu CARI MENU MINUMAN (77) 
-> Masukkan kode minuman yang ingin dipesan
-> Cetak struk atau masukkan pemesanan kembali
-> Keluar atau ingin Lihat daftar menu minuman kembali
+> Melihat list daftar menu.
+> Pesan minuman dengan pilih menu CARI MENU MINUMAN (77).
+> Masukkan kode minuman yang ingin dipesan.
+> Cetak struk atau masukkan pemesanan kembali.
+> Keluar atau ingin Lihat daftar menu minuman kembali.
 ```
