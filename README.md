@@ -2,7 +2,7 @@
 
 ### SCREENSHOTS APLIKASI:
 ___
-
-![aranaywa github stats](https://github-readme-stats.vercel.app/api?username=aranaywa&layout=compact&theme=chartreuse-dark)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=aranaywa&count_private=true&show_icons=true&theme=chartreuse-dark)
+<p align="center">
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEjBfojsnaYNgT7VDMCIQLsjVK6kuXDE0d98DC_Z8ZnNBlVajNsx6r5qCtJymGVdJVOe3o_FkM5vOhUXSaoz93FK4OzRCvrZ4WZiEOTroG648cIpSmELkserc9H_C_Dqp3sTPVeKMx3VWXzWAFa25hmMZ9CK2PnJIniTynSog5TbJn_l6Vkh9YjeHA=s701" alt="JPG"/>
+</p>
+___
