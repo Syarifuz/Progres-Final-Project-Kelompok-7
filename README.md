@@ -1,8 +1,6 @@
 <h1  align='center'> MESIN MINUMAN </h1>
-### :star: SOSMED (IG):
-  - [ARANAYWA](https://instagram.com/aranaywa)
 
-### :star: MY STATS
+### SCREENSHOTS APLIKASI:
 ___
 
 ![aranaywa github stats](https://github-readme-stats.vercel.app/api?username=aranaywa&layout=compact&theme=chartreuse-dark)
