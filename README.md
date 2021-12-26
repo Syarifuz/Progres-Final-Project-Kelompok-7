@@ -1,3 +1,4 @@
 <h1  align='center'> MESIN MINUMAN </h1>
-### :star: MY STATS
+SCREENSHOTS APLIKASI:
 ___
+Tes
