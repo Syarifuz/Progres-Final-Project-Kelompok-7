@@ -2,8 +2,9 @@
 
 #### 🔰 SCREENSHOTS APLIKASI
 <p align="center">
-<img src="https://blogger.googleusercontent.com/img/a/AVvXsEjBfojsnaYNgT7VDMCIQLsjVK6kuXDE0d98DC_Z8ZnNBlVajNsx6r5qCtJymGVdJVOe3o_FkM5vOhUXSaoz93FK4OzRCvrZ4WZiEOTroG648cIpSmELkserc9H_C_Dqp3sTPVeKMx3VWXzWAFa25hmMZ9CK2PnJIniTynSog5TbJn_l6Vkh9YjeHA=s701" alt="JPG"/>
-<img src="https://blogger.googleusercontent.com/img/a/AVvXsEjBfojsnaYNgT7VDMCIQLsjVK6kuXDE0d98DC_Z8ZnNBlVajNsx6r5qCtJymGVdJVOe3o_FkM5vOhUXSaoz93FK4OzRCvrZ4WZiEOTroG648cIpSmELkserc9H_C_Dqp3sTPVeKMx3VWXzWAFa25hmMZ9CK2PnJIniTynSog5TbJn_l6Vkh9YjeHA=s701" alt="JPG"/>
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEhWolgAYB1bqbQGyu1bUXOtmrd9LGgrD16bGLtnHO79YYUdtwQPsb2rxzNvkpfttqXaTkUfENclzkQmPuCbs9DNHZYL6LQkzIjiTz5VmKeg7DAHoRfF5z4uOJOs8JrxtaZhf2SuzCVBOwE0r5SSoqQ4UDXGhBGnwf1E0o1dRs3KSeVDi6SG6ddGjA=s1348" width="701" height="360"/>
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEiE1r2IPTSiFcjFF5W1f8YqySoE-eCBfeY9-pod4HWy6ewvMbHTuyA05C_ZMVqmQ11hdf-30MHkUsou7ibZDzNWjXluiw9Q8BwX4ILYz8N8AA7sbOrzAQY6GXSlq9_8vBM6VEFi51_s4W5tqU_ImQCC_Jvm74MD97e8CHgKf9QMoMxQYRJG6Hn1uA=s1345" width="701" height="360"/>
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEhjZsIMIpyUNO9Yu82U_WVlQM1pnb8iE7CXNEfPXclGmLGxYIWWECXz2PHlDdar_J8dXYqGf3UCFTPwz5yUfYfa_pHCMbfeWGcP176H5lvkxzuCqExesrsMXGbw2av50ccm5dDvZMJBPpTVIhPngRwQ9TPQq8FHt4CkaCaSmO915UNMQiQjcifP5g=s1342" width="701" height="359"/>
 </p>
 
 ___
