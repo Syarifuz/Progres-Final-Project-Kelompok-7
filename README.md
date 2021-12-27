@@ -7,7 +7,7 @@
 <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhjZsIMIpyUNO9Yu82U_WVlQM1pnb8iE7CXNEfPXclGmLGxYIWWECXz2PHlDdar_J8dXYqGf3UCFTPwz5yUfYfa_pHCMbfeWGcP176H5lvkxzuCqExesrsMXGbw2av50ccm5dDvZMJBPpTVIhPngRwQ9TPQq8FHt4CkaCaSmO915UNMQiQjcifP5g=s1342" width="701" height="359"/>
 </p>
 
-___
+---
 
 #### 🔰 ANGGOTA KELOMPOK 7
 - Fenti Agil Sakinah (20081010161)
@@ -16,7 +16,7 @@ ___
 - Tenzilla Titan Arwantaka (20081010152)
 - Nur Azizah Istiqomah (20081010154)
 
-___
+---
 
 #### 🔰 DESKRIPSI PROJEK AKHIR
 Project kami, membuat sistem pembelian mesin minuman. Dengan minuman yang telah disediakan pada menu beserta harganya:
@@ -47,7 +47,7 @@ Di bawah menu di atas, pengguna dapat memilih menu yang diinginkan:
 00. Keluar
 ```
 
-___
+---
 
 #### 🔰 DATA YANG DIGUNAKAN
 Data yang digunakan pada program kami adalah sebagai berikut:
@@ -57,7 +57,7 @@ Data yang digunakan pada program kami adalah sebagai berikut:
 > Kode Minuman
 ```
 
-___
+---
 
 #### 🔰 METODE YANG DITERAPKAN
 Metode-metode yang digunakan dalam program mesin minuman kelompok 7:
@@ -71,7 +71,7 @@ Metode-metode yang digunakan dalam program mesin minuman kelompok 7:
 > Menggunakan Function Void.
 ```
 
-___
+---
 
 #### 🔰 LIST MENU
 ```bash
