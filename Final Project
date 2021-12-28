@@ -1,18 +1,26 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <conio.h>
+#include<conio.h>
 #include <time.h>
 #include <unistd.h>
 #include <windows.h>
 
+FILE *pm;
 void panggilMenu(void);
 void Penghitungan();
+void pesan();
 void struk(void);
 void SetColor(unsigned short);
+void carimenu();
+void tampilmenu();
+void liatmenu();
+char cari[50];
 
+
+#define a  14
 struct menu
     {
-        int menuminuman;
+        int menuminuman;       
     };
     struct subtotal
     {
@@ -21,15 +29,39 @@ struct menu
     };
     struct minum
     {
-        int fanta, cocacola, sprite, greensands, bintangradler, pocarisweet, hydrococo, isoplus, mizone, goodmood, airputih, milo, tehkotak, nescafe;
+		int fanta, cocacola, sprite, greensands, bintangradler, pocarisweet, hydrococo, isoplus, mizone, goodmood, airputih, milo, tehkotak, nescafe;
+	
+	};
+	struct minum minuman;
+	
+struct data
+{
+		char nama[100];
+        int harga;
+        int kode;
+};
+data list[a] = {
+					
+			{"Fanta",11500,1},
+			{"Coca-cola",11900,2},
+			{"Sprite",12000,3},
+			{"Green Sands",10500,4},
+			{"Bintang Radler",10000,5},
+			{"Pocari Sweet",6000,6},
+			{"Hydro Coco",11000,7},
+			{"Isoplus",4000,8},
+			{"Mizone",9000,9},
+			{"Good Mood",8000,10},
+			{"Air Putih",5000,11},
+			{"Milo",10000,12},
+			{"Teh Kotak",6000,13},
+			{"Nescafe",6000,14}
+};
+struct menu menuminum;
+struct subtotal sub;
 
-    };
-    struct minum minuman;
-    struct menu menuminum;
-    struct subtotal sub;
-    
-    char yakin;
-    time_t ambil_waktu;
+char yakin;
+time_t ambil_waktu;
     
 void garistepi(int x) {
 	int i;
@@ -64,41 +96,43 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
+void tampilmenu(void){
+	char buff[255];
+    if ((pm = fopen("datamenu.txt","r")) == NULL){
+        printf("Error: File tidak ada!");
+        exit(1);
+    }
+    printf ("\n|No.| Minuman \t\t| Harga      |\t\t|No.| Minuman\t\t | Harga     |\n");
+    while(fgets(buff, sizeof(buff), pm)){
+        printf("%s", buff);
+    }
+
+    fclose(pm);
+}
+
     int main()
 {
     panggilMenu();
-    return 0;
+	return 0;
+	
 }
 
 void panggilMenu (void){
-	system("color F0");
+system("color F0");
 	gotoxy(32,13);
     loadscr();
     system("cls");
     printf ("\n\t\t\t  Selamat datang di Mesin Minuman Kelompok 7.\n");
     printf ("\t\t\t     Silakan pilih menu yang Anda sukai:\n\n");
     garistepi(120);
-    printf ("|No.| Minuman \t\t| Harga      |\t\t|No.| Minuman\t\t | Harga     |\n");
-    printf("|-------------------------------------------------------------------------------------\n");
-    printf("| 1 | FANTA \t\t|  Rp 10.000 |\t\t");
-    printf("| 2 | COCA-COLA\t\t | Rp 10.000 | \n");
-    printf("| 3 | SPRITE \t\t|  Rp 10.000 |\t\t");
-    printf("| 4 | GREEN SANDS\t | Rp 10.000 |\n");
-    printf("| 5 | BINTANG RADLER \t|  Rp 20.000 |\t\t");
-    printf("| 6 | POCARI SWEET\t | Rp 10.000 |\n");
-    printf("| 7 | HYDRO COCO \t|  Rp 10.000 |\t\t");
-    printf("| 8 | ISO PLUS\t\t | Rp 10.000 |\n");
-    printf("| 9 | MIZONE \t\t|  Rp 10.000 |\t\t");
-    printf("| 10| GOOD MOOD\t\t | Rp 20.000 |\n");
-    printf("| 11| AIR PUTIH \t|  Rp 5.000  |\t\t");
-    printf("| 12| MILO\t\t | Rp 5.000  |\n");
-    printf("| 13| TEH KOTAK \t|  Rp 5.000  |\t\t");
-    printf("| 14| NESCAFE\t\t | Rp 5.000  |\n");
+	tampilmenu();
     garistepi(120);
+    printf("\n66. lihat menu minuman bedasarkan harga");
+    printf("\n77. Cari menu minuman");
     printf("\n99. Struk Pembayaran\n55. Reset pilihan\n00.  Keluar\n");
     garistepi(120);
     
-    for (menuminum.menuminuman!=0;menuminum.menuminuman!=99;){
+     for (menuminum.menuminuman!=0;menuminum.menuminuman!=99;){
  
  printf("\nInput pilihan yang Anda inginkan:         "); scanf("%d",&menuminum.menuminuman); 
     switch(menuminum.menuminuman) {
@@ -106,61 +140,61 @@ void panggilMenu (void){
             printf("\n [1] Pemesanan FANTA\n");
             printf("jumlah pesan =\t\t\t  ");scanf("%d",&minuman.fanta);
             garistepi(100);
-            sub.jmlbeli1=minuman.fanta*10000;
+            sub.jmlbeli1=minuman.fanta*11500;
             break;
     case 2:
             printf("\n [2]Pemesanan COCA-COLA\n");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.cocacola);
             garistepi(100);
-            sub.jmlbeli2=minuman.cocacola*10000;
+            sub.jmlbeli2=minuman.cocacola*11900;
     break;
     case 3:
             printf("\n [3] Pemesanan SPRITE\n");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.sprite);
             garistepi(100);
-            sub.jmlbeli3=minuman.sprite*10000;
+            sub.jmlbeli3=minuman.sprite*12000;
     break;
     case 4:
             printf("\n [4] Pemesanan GREEN SANDS\n");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.greensands);
             garistepi(100);
-            sub.jmlbeli4=minuman.greensands*10000;
+            sub.jmlbeli4=minuman.greensands*10500;
     break;
     case 5:
             printf("\n [5] Pemesanan BINTANG RADLER\n ");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.bintangradler);
             garistepi(100);
-            sub.jmlbeli5=minuman.bintangradler*20000;
+            sub.jmlbeli5=minuman.bintangradler*10000;
     break;
     case 6:
             printf("\n [6] Pemesanan POCARI SWEET\n ");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.pocarisweet);
             garistepi(100);
-            sub.jmlbeli6=minuman.pocarisweet*10000;
+            sub.jmlbeli6=minuman.pocarisweet*6000;
     break;
     case 7:
             printf("\n [6] Pemesanan HYDRO COCO\n ");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.hydrococo);
             garistepi(100);
-            sub.jmlbeli7=minuman.hydrococo*10000;
+            sub.jmlbeli7=minuman.hydrococo*11000;
     break;
     case 8:
             printf("\n [6] Pemesanan ISO PLUS\n ");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.isoplus);
             garistepi(100);
-            sub.jmlbeli8=minuman.isoplus*10000;
+            sub.jmlbeli8=minuman.isoplus*4000;
     break;
     case 9:
             printf("\n [6] Pemesanan MIZONE\n ");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.mizone);
             garistepi(100);
-            sub.jmlbeli9=minuman.mizone*10000;
+            sub.jmlbeli9=minuman.mizone*9000;
     break;
     case 10:
             printf("\n [6] Pemesanan GOOD MOOD\n ");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.goodmood);
             garistepi(100);
-            sub.jmlbeli10=minuman.goodmood*20000;
+            sub.jmlbeli10=minuman.goodmood*8000;
     break;
     case 11:
             printf("\n [6] Pemesanan AIR PUTIH\n ");
@@ -172,19 +206,27 @@ void panggilMenu (void){
             printf("\n [6] Pemesanan MILO\n ");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.milo);
             garistepi(100);
-            sub.jmlbeli10=minuman.milo*5000;
+            sub.jmlbeli10=minuman.milo*10000;
     break;
     case 13:
             printf("\n [6] Pemesanan TEH KOTAK\n ");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.tehkotak);
             garistepi(100);
-            sub.jmlbeli10=minuman.tehkotak*5000;
+            sub.jmlbeli10=minuman.tehkotak*6000;
     break;
     case 14:
             printf("\n [6] Pemesanan NESCAFE\n ");
             printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.nescafe);
             garistepi(100);
-            sub.jmlbeli10=minuman.nescafe*5000;
+            sub.jmlbeli10=minuman.nescafe*6000;
+    break;
+    case 66:
+            system("cls");
+			liatmenu();  
+    break;
+    case 77:
+            system("cls");
+			carimenu();  
     break;
     case 99:
             system("cls");
@@ -228,6 +270,226 @@ void panggilMenu (void){
 
 }
 }
+
+void pesan(void){
+	printf("\n99. Struk Pembayaran\n55. Kembali\n\n");
+	for (menuminum.menuminuman!=0;menuminum.menuminuman!=99;){
+ 
+ printf("\nInput pilihan yang Anda inginkan:         "); scanf("%d",&menuminum.menuminuman); 
+    switch(menuminum.menuminuman) {
+    case 1:
+            printf("\n [1] Pemesanan FANTA\n");
+            printf("jumlah pesan =\t\t\t  ");scanf("%d",&minuman.fanta);
+            garistepi(100);
+            sub.jmlbeli1=minuman.fanta*11500;
+            break;
+    case 2:
+            printf("\n [2]Pemesanan COCA-COLA\n");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.cocacola);
+            garistepi(100);
+            sub.jmlbeli2=minuman.cocacola*11900;
+    break;
+    case 3:
+            printf("\n [3] Pemesanan SPRITE\n");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.sprite);
+            garistepi(100);
+            sub.jmlbeli3=minuman.sprite*12000;
+    break;
+    case 4:
+            printf("\n [4] Pemesanan GREEN SANDS\n");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.greensands);
+            garistepi(100);
+            sub.jmlbeli4=minuman.greensands*10500;
+    break;
+    case 5:
+            printf("\n [5] Pemesanan BINTANG RADLER\n ");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.bintangradler);
+            garistepi(100);
+            sub.jmlbeli5=minuman.bintangradler*10000;
+    break;
+    case 6:
+            printf("\n [6] Pemesanan POCARI SWEET\n ");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.pocarisweet);
+            garistepi(100);
+            sub.jmlbeli6=minuman.pocarisweet*6000;
+    break;
+    case 7:
+            printf("\n [6] Pemesanan HYDRO COCO\n ");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.hydrococo);
+            garistepi(100);
+            sub.jmlbeli7=minuman.hydrococo*11000;
+    break;
+    case 8:
+            printf("\n [6] Pemesanan ISO PLUS\n ");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.isoplus);
+            garistepi(100);
+            sub.jmlbeli8=minuman.isoplus*4000;
+    break;
+    case 9:
+            printf("\n [6] Pemesanan MIZONE\n ");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.mizone);
+            garistepi(100);
+            sub.jmlbeli9=minuman.mizone*9000;
+    break;
+    case 10:
+            printf("\n [6] Pemesanan GOOD MOOD\n ");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.goodmood);
+            garistepi(100);
+            sub.jmlbeli10=minuman.goodmood*8000;
+    break;
+    case 11:
+            printf("\n [6] Pemesanan AIR PUTIH\n ");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.airputih);
+            garistepi(100);
+            sub.jmlbeli10=minuman.airputih*5000;
+    break;
+    case 12:
+            printf("\n [6] Pemesanan MILO\n ");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.milo);
+            garistepi(100);
+            sub.jmlbeli10=minuman.milo*10000;
+    break;
+    case 13:
+            printf("\n [6] Pemesanan TEH KOTAK\n ");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.tehkotak);
+            garistepi(100);
+            sub.jmlbeli10=minuman.tehkotak*6000;
+    break;
+    case 14:
+            printf("\n [6] Pemesanan NESCAFE\n ");
+            printf("jumlah pesan = \t\t\t  ");scanf("%d",&minuman.nescafe);
+            garistepi(100);
+            sub.jmlbeli10=minuman.nescafe*6000;
+    break;
+    case 99:
+            system("cls");
+			Penghitungan();  
+    break;
+    case 55:
+            system("cls"); 
+            panggilMenu();  
+    break;
+    default: 
+        printf("Kesalahan inputan, menu no.%d tidak ada dalam daftar\n",menuminum.menuminuman);
+        printf("- Silakan input kembali\n");
+    break;
+
+    }
+
+}
+}
+
+int urutharga_des(){
+	system("cls");
+	garistepi(100);
+	printf("\t\t\t\t\t\tMENU URUT MULAI DARI HARGA TERTINGGI\n\n");
+	garistepi(100);
+	int h;
+ 	int i;
+ 	data temp;
+ 	int arr;
+ 	printf("\t  Nama Minuman\t   | \tHarga\t   | \tKode\n\t=========================================\n");
+	for (h = 0; h < a; h++) {
+ 		arr = h;
+	 	for (i = 0; i < a-1; i++) {
+	 		if (list[arr].harga > list[i].harga) {
+	 			arr = i;
+	 		}
+	 		temp = list [h];
+	 		list [h] = list [arr];
+	 		list [arr] = temp;
+		
+	 	}
+	}
+	for(h = 0; h < a; h++){
+		
+    printf("\t   %s\t\t: %i\t: %i\t\n",list[h].nama,list[h].harga, list[h].kode);
+
+	}
+	garistepi(120);
+	pesan();
+	}
+	
+int urutharga_as(){
+	system("cls");
+	garistepi(100);
+	printf("\t\t\t\t\t\tMENU URUT MULAI DARI HARGA TERENDAH\n\n");
+	garistepi(100);
+	int h;
+ 	int i;
+ 	data temp;
+ 	int arr;
+ 	printf("\t  Nama Minuman\t   | \tHarga\t   | \tKode\n\t=========================================\n");
+	for (h = 0; h < a; h++) {
+ 		arr = h;
+	 	for (i = 0; i < a-1; i++) {
+	 		if (list[arr].harga < list[i].harga) {
+	 			arr = i;
+	 		}
+	 		temp = list [h];
+	 		list [h] = list [arr];
+	 		list [arr] = temp;
+		
+	 	}
+	}
+	for(h = 0; h < a; h++){
+		
+	printf("\t   %s\t\t: %i\t: %i\t\n",list[h].nama,list[h].harga, list[h].kode);
+	}
+	garistepi(120);
+	pesan();
+	}
+	
+void liatmenu(void){
+	system("cls");
+	garistepi(100);
+	printf("\t\t\t\t\t\t LIHAT MENU \n");
+	garistepi(100);
+	puts("\n Pilih :");
+	puts("  1. Menu bedasarkan harga tertinggi ");
+    puts("  2. Menu bedasarkan harga terendah ");
+    garistepi(100);
+    switch(getch()){
+		case '1' : urutharga_des();
+        break;
+        case '2' : urutharga_as();
+        break;
+	}
+    
+}
+ void carimenu(void){
+ 	system("cls");
+	garistepi(100);
+	printf("\t\t\t\t\t\tCARI MENU\n\n");
+	garistepi(100);
+ 	char buff[255];
+ 	char*pch;
+ {  if ((pm=fopen("datamenu.txt","r"))== NULL)
+            {
+                printf("file tak dapat dibuka !\r\n");
+                exit(1);
+            }
+            printf("Masukkan Nama Menu yang dicari (pakai huruf kapital) :");
+            fflush(stdin);
+            gets(cari);
+        while(fgets(buff,sizeof(buff),pm)!=NULL)
+            {
+            pch=strstr(buff,cari);
+            if(pch!=NULL)
+            {
+            printf ("|No.| Minuman \t\t| Harga      |\t\t|No.| Minuman\t\t | Harga     |\n");
+            printf("%s\n",buff);
+            garistepi(100);
+			}
+			if (pch=NULL)
+			{	printf("\t\t\ndata tidak ditemukan!!\n");}
+}
+          fclose(pm);
+        }
+        
+	pesan();
+ }
+ 
 
 void Penghitungan(void)
 {
@@ -286,43 +548,43 @@ void struk(void)
         printf("|===============================================================|\n");
         if (sub.jmlbeli1>0)
         {
-        printf("| Fanta\t|     10.000\t|    %d\t  |  Rp.%d\t\t|",minuman.fanta,sub.jmlbeli1);
+        printf("| Fanta\t|     11.500\t|    %d\t  |  Rp.%d\t\t|",minuman.fanta,sub.jmlbeli1);
         }
                 if (sub.jmlbeli2>0)
         {
-        printf("\n| Coca-cola\t|     10.000\t|    %d\t  |  Rp.%d\t\t|",minuman.cocacola,sub.jmlbeli2);
+        printf("\n| Coca-cola\t|     11.900\t|    %d\t  |  Rp.%d\t\t|",minuman.cocacola,sub.jmlbeli2);
         }
                 if (sub.jmlbeli3>0)
         {
-        printf("\n| Sprite\t|     10.000\t|    %d\t  |  Rp.%d\t\t|",minuman.sprite,sub.jmlbeli3);
+        printf("\n| Sprite\t|     12.000\t|    %d\t  |  Rp.%d\t\t|",minuman.sprite,sub.jmlbeli3);
         }
                 if (sub.jmlbeli4>0)
         {
-        printf("\n| Green Sands\t|     10.000\t|    %d\t  |  Rp.%d\t\t|",minuman.greensands,sub.jmlbeli4);
+        printf("\n| Green Sands\t|     10.500\t|    %d\t  |  Rp.%d\t\t|",minuman.greensands,sub.jmlbeli4);
         }
                 if (sub.jmlbeli5>0)
         {
-        printf("\n| Bintang Radler\t|     20.000\t|    %d\t  |  Rp.%d\t\t|",minuman.bintangradler,sub.jmlbeli5);
+        printf("\n| Bintang Radler\t|     10.000\t|    %d\t  |  Rp.%d\t\t|",minuman.bintangradler,sub.jmlbeli5);
         }
                 if (sub.jmlbeli6>0)
         {
-        printf("\n| Pocari Sweet\t|     10.000\t|    %d\t  |  Rp.%d\t\t|",minuman.pocarisweet,sub.jmlbeli6);
+        printf("\n| Pocari Sweet\t|     6.000\t|    %d\t  |  Rp.%d\t\t|",minuman.pocarisweet,sub.jmlbeli6);
         }
                 if (sub.jmlbeli7>0)
         {
-        printf("\n| Hydro Coco\t|     10.000\t|    %d\t  |  Rp.%d\t\t|",minuman.hydrococo,sub.jmlbeli7);
+        printf("\n| Hydro Coco\t|     11.000\t|    %d\t  |  Rp.%d\t\t|",minuman.hydrococo,sub.jmlbeli7);
         }
                 if (sub.jmlbeli8>0)
         {
-        printf("\n| Iso Plus\t|     10.000\t|    %d\t  |  Rp.%d\t\t|",minuman.isoplus,sub.jmlbeli8);
+        printf("\n| Iso Plus\t|     4.000\t|    %d\t  |  Rp.%d\t\t|",minuman.isoplus,sub.jmlbeli8);
         }
                 if (sub.jmlbeli9>0)
         {
-        printf("\n| Mizone\t|     10.000\t|    %d\t  |  Rp.%d\t\t|",minuman.mizone,sub.jmlbeli9);
+        printf("\n| Mizone\t|     9.000\t|    %d\t  |  Rp.%d\t\t|",minuman.mizone,sub.jmlbeli9);
         }
                 if (sub.jmlbeli10>0)
         {
-        printf("\n| Good Mood\t|     20.000\t|    %d\t  |  Rp.%d\t\t|",minuman.goodmood,sub.jmlbeli10);
+        printf("\n| Good Mood\t|     8.000\t|    %d\t  |  Rp.%d\t\t|",minuman.goodmood,sub.jmlbeli10);
         }
         		if (sub.jmlbeli11>0)
         {
@@ -330,15 +592,15 @@ void struk(void)
         }
                 if (sub.jmlbeli12>0)
         {
-        printf("\n| Milo\t|     5.000\t|    %d\t  |  Rp.%d\t\t|",minuman.milo,sub.jmlbeli12);
+        printf("\n| Milo\t|     10.000\t|    %d\t  |  Rp.%d\t\t|",minuman.milo,sub.jmlbeli12);
         }
                 if (sub.jmlbeli13>0)
         {
-        printf("\n| Teh Kotak\t|     5.000\t|    %d\t  |  Rp.%d\t\t|",minuman.tehkotak,sub.jmlbeli13);
+        printf("\n| Teh Kotak\t|     6.000\t|    %d\t  |  Rp.%d\t\t|",minuman.tehkotak,sub.jmlbeli13);
         }
                 if (sub.jmlbeli14>0)
         {
-        printf("\n| Nescafe\t|     5000\t|    %d\t  |  Rp.%d\t\t|",minuman.nescafe,sub.jmlbeli14);
+        printf("\n| Nescafe\t|     6.000\t|    %d\t  |  Rp.%d\t\t|",minuman.nescafe,sub.jmlbeli14);
         }
         
         printf("\n|_______________________________________________________________|");
